@@ -7,7 +7,7 @@ using neo4j or other FOSS graph database
 
 construction of a FOSS nostr relay that calculates and keeps track of the relay owner's web of trust (WoT), defined using graph database centrality algorithms, starting with PageRank but with the intention to explore other options
 
-ideally, using neo4j as the graph database, but others may be considered as long as they're FOSS
+ideally, neo4j as the graph database and neo4j Graph Data Science library for PageRank and other centrality algorithms, but alternate tools will be considered as long as they're FOSS
 
 ## Background and motivation
 

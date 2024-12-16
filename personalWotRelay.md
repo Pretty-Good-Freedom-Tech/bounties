@@ -29,3 +29,4 @@ The long term goal will be to move beyond pagerank and experiment with different
 
 - [utxo's WoT relay](https://github.com/bitvora/wot-relay), which uses "follows of my follows" as web of trust
 - [HAVEN](https://github.com/bitvora/haven) (not sure how it calculates WoT)
+- [Sep 2024 thread with list of WoT relays](https://nostr.cxplay.org/nevent1qqszl5x33zks8k2wh2eh6c7kncphjsngc0kz4ktfueje9drm3d47wxgpz4mhxue69uhkummnw3ezummcw3ezuer9wchsygplwuxkt5a8vj5utj6s8tsj8e3wcavc45p4mqmw92qs7wrh5azmyspsgqqqqqqsxa6gcy)

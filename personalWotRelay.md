@@ -1,29 +1,43 @@
 Graph-Database-powered Personal Nostr Web of Trust Relay
 =====
 
-## Goal of the project: 
+## Overview: 
 
 construction of a FOSS nostr relay that calculates and keeps track of the relay owner's web of trust, using graph database centrality algorithms (including but not limited to PageRank) to define the web
 
-Similar to utxo's personal web of trust relay (see refs below), but with more advanced methods of defining web of trust.
+ideally, using neo4j as the graph database, but others may be considered as long as they're FOSS
 
-## Details
+## Background and motivation
 
-- use either strfry OR fiatjaf's nostr relay khatru
+Existing nostr WoT relays define WoT using relatively crude methods. Utxo's WoT relay, for example, defines a user's WoT very simply, as my follows + the follows of my follows. WHhile useful, this approach suffers from a number of shortcomings. We believe that centrality algorithms, powered by FOSS graph databases such as neo4j, offer much more sophisticated, powerful, and flexible algorithms for definitions and determination of one's webs of trust.
+
+## Desired features
+
+- start with either strfry OR fiatjaf's nostr relay khatru
 - neo4j for graph database, although will consider other open source graph database implementations
-- ability to calculate pagerank scores of everyone in your network
-- Your WoT is defined as every pubkey with pagerank score above an arbitrarily chosen threshold
+- automatically calculate pagerank scores of everyone in your network, using kind 3 follows, looking at an unlimited number of hops away
+- your WoT is defined as every pubkey with pagerank score above an arbitrarily chosen threshold
 
-Minimum product will have the following features:
-- local storage of all kind 3 notes
-- continuous update of pagerank scores using FOLLOWS
+## Utility
 
-More advanced will allow:
+More advanced iterations will allow:
 - selection of note kinds which will be stored for all npubs in the WoT, e.g. all kind 1 notes authored by anyone with pagerank score above threshold
 
-## Purposes
+The long term goal will be to move beyond pagerank and experiment with different centrality algorithms, possibly using multiple algos to keep track of multiple webs of trust, using data not limited to follows. 
 
-The long term goal will be to move beyond pagerank and experiment with different centrality algorithms, possibly using multiple algos to keep trakc of multiple webs of trust, using data not limited to follows.
+A chief candidate for next-gen centralizty algo will be the GrapeRank algorithm.
+- incorporates follows, mutes and reports (NIP-56, kind 1984) to define the baseline web of trust
+- defines a pathway for incorporation of new sources of data (e.g. NIP 32 labels, zaps, reactions, replies, etc)
+- multiple webs of trust, each one corresponding to a distinct context
+- customizable to individual user preferences and values
+
+## candidates
+
+Interested? Send me a DM at: npub1u5njm6g5h5cpw4wy8xugu62e5s7f6fnysv0sj0z3a8rengt2zqhsxrldq3
+
+Ideal candidates will have expertise in the following areas:
+- neo4j, cypher, neo4j Graph Data Science, and centrality algorithms
+- nostr relay management
 
 ## References
 

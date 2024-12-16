@@ -1,4 +1,4 @@
-Personal Nostr Web of Trust Relay
+Personal Nostr Web of Trust Relay with neo4j Graph Database
 =====
 
 ## Goal of the project: 

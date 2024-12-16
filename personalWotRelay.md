@@ -3,13 +3,13 @@ Personal Nostr Web of Trust Relay
 
 ## Goal of the project: 
 
-construction of a FOSS nostr relay that 
+construction of a FOSS nostr relay that calculates and keeps track of the relay owner's web of trust, using graph database centrality algorithms (including but not limited to PageRank) to define the web
 
 Similar to utxo's personal web of trust relay, but with more advanced methods of defining web of trust. utxo's defines WoT as follows of my follows. (is this correct ????)
 
 ## Details
 
-- use either strfry OR fiatjaf's nostr relay
+- use either strfry OR fiatjaf's nostr relay khatru
 - neo4j for graph database, although will consider other open source graph database implementations
 - ability to calculate pagerank scores of everyone in your network
 - Your WoT is defined as every pubkey with pagerank score above an arbitrarily chosen threshold
@@ -24,3 +24,7 @@ More advanced will allow:
 ## Purposes
 
 The long term goal will be to move beyond pagerank and experiment with different centrality algorithms, possibly using multiple algos to keep trakc of multiple webs of trust, using data not limited to follows.
+
+## References
+
+- [HAVEN](https://github.com/bitvora/haven)

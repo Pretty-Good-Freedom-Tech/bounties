@@ -1,5 +1,7 @@
-Graph-Database-powered Personal Nostr Web of Trust Relay
+Graph Database powered Personal Nostr Web of Trust Relay
 =====
+using neo4j or other FOSS graph database
+-----
 
 ## Overview: 
 

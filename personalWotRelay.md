@@ -49,7 +49,7 @@ A chief candidate for next-gen centralizty algo will be the GrapeRank algorithm.
 
 This is a work in progress -- but if you're interested, send me a DM at: npub1u5njm6g5h5cpw4wy8xugu62e5s7f6fnysv0sj0z3a8rengt2zqhsxrldq3 
 
-Ideal candidates will have expertise in the following areas:
+Ideal candidates (or teams) will have expertise in the following areas:
 - neo4j, cypher, neo4j Graph Data Science, and centrality algorithms
 - nostr relay management
 

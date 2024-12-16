@@ -5,7 +5,7 @@ Personal Nostr Web of Trust Relay with neo4j Graph Database
 
 construction of a FOSS nostr relay that calculates and keeps track of the relay owner's web of trust, using graph database centrality algorithms (including but not limited to PageRank) to define the web
 
-Similar to utxo's personal web of trust relay, but with more advanced methods of defining web of trust. utxo's defines WoT as follows of my follows. (is this correct ????)
+Similar to utxo's personal web of trust relay (see refs below), but with more advanced methods of defining web of trust.
 
 ## Details
 
@@ -27,4 +27,5 @@ The long term goal will be to move beyond pagerank and experiment with different
 
 ## References
 
-- [HAVEN](https://github.com/bitvora/haven)
+- [utxo's WoT relay](https://github.com/bitvora/wot-relay), which uses "follows of my follows" as web of trust
+- [HAVEN](https://github.com/bitvora/haven) (not sure how it calculates WoT)

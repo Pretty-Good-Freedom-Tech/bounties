@@ -23,13 +23,21 @@ Existing nostr WoT relays define WoT using relatively crude methods. Utxo's WoT 
 - update the Follows Network and pagerank scores continuously or with high frequency
 - The reference user's baseline WoT will be defined as every pubkey with pagerank score above an arbitrarily chosen threshold
 
-## Utility
+## Initial Utility
+
+For the reference user, output a list:
+- ranked order of all pubkeys in the user's reference WoT
+- ranked order of the reference user's followers, ranked by PageRank
+
+## Future directions
 
 More advanced versions of this project will allow:
 - abiilty to adjust the threshold pagerank score for inclusion in the baseline WoT
 - selection of note kinds which will be stored for all pubkeys in the WoT, e.g. the option to store all kind 1 notes authored by anyone with pagerank score above threshold
 
-The long term goal will be to move beyond pagerank and experiment with different centrality algorithms, possibly using multiple algos to keep track of multiple webs of trust, using data not limited to follows. 
+The long term goal will be to move beyond pagerank and _experiment with different centrality algorithms_:
+- primary data not limited to follows; e.g., incorporate mutes and reports
+- multiple algos to keep track of multiple, _contextual_ webs of trust, e.g. use different kind 1984 report types to keep track of different populations
 
 A chief candidate for next-gen centralizty algo will be the GrapeRank algorithm.
 - incorporates follows, mutes and reports (NIP-56, kind 1984) to define the baseline web of trust

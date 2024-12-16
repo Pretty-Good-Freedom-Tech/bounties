@@ -5,7 +5,7 @@ using neo4j or other FOSS graph database
 
 ## Overview: 
 
-construction of a FOSS nostr relay that calculates and keeps track of the relay owner's web of trust, defined using graph database centrality algorithms, starting with PageRank but with the intention to explore other options
+construction of a FOSS nostr relay that calculates and keeps track of the relay owner's web of trust (WoT), defined using graph database centrality algorithms, starting with PageRank but with the intention to explore other options
 
 ideally, using neo4j as the graph database, but others may be considered as long as they're FOSS
 
@@ -16,14 +16,18 @@ Existing nostr WoT relays define WoT using relatively crude methods. Utxo's WoT 
 ## Desired features
 
 - start with either strfry OR fiatjaf's nostr relay khatru
-- neo4j for graph database, although will consider other open source graph database implementations
-- automatically calculate pagerank scores of everyone in your network, using kind 3 follows, looking at an unlimited number of hops away
-- your WoT is defined as every pubkey with pagerank score above an arbitrarily chosen threshold
+- incorporate neo4j graph database, although will consider other open source graph database implementations
+- keep track of the reference user's Follows Network: all pubkeys connected to the reference user, using kind 3 follows, with no limit to the number of hops away (expected to be between 150k-200k npubs, as of Dec 2024)
+- keep an up to date neo4j graph: users as nodes, follows as edges
+- incorporate the neo4j Graph Data Science library and use it to calculate and keep up to date PageRank
+- update the Follows Network and pagerank scores continuously or with high frequency
+- The reference user's baseline WoT will be defined as every pubkey with pagerank score above an arbitrarily chosen threshold
 
 ## Utility
 
-More advanced iterations will allow:
-- selection of note kinds which will be stored for all npubs in the WoT, e.g. all kind 1 notes authored by anyone with pagerank score above threshold
+More advanced versions of this project will allow:
+- abiilty to adjust the threshold pagerank score for inclusion in the baseline WoT
+- selection of note kinds which will be stored for all pubkeys in the WoT, e.g. the option to store all kind 1 notes authored by anyone with pagerank score above threshold
 
 The long term goal will be to move beyond pagerank and experiment with different centrality algorithms, possibly using multiple algos to keep track of multiple webs of trust, using data not limited to follows. 
 

@@ -11,7 +11,7 @@ ideally, using neo4j as the graph database, but others may be considered as long
 
 ## Background and motivation
 
-Existing nostr WoT relays define WoT using relatively crude methods. Utxo's WoT relay, for example, defines a user's WoT very simply, as my follows + the follows of my follows. While useful, this approach suffers from a number of shortcomings, including the inability to contextualize trust, uncertainty how to incorporate data beyone the follows, and uncertainty how to personalize individual preferences, beliefs and values. We believe that centrality algorithms, powered by FOSS graph databases such as neo4j, offer much more sophisticated, powerful, and flexible algorithms that have the potential to address each of these shortcomings.
+Existing nostr WoT relays define WoT using relatively crude methods. Utxo's WoT relay, for example, defines a user's WoT very simply, as my follows + the follows of my follows. While useful, this approach suffers from a number of shortcomings, including the inability to contextualize trust, uncertainty how to incorporate data beyond simple follows, and uncertainty how to personalize individual preferences, beliefs and values. We believe that centrality algorithms, powered by FOSS graph databases such as neo4j, offer much more sophisticated, powerful, and flexible algorithms that have the potential to address each of these shortcomings.
 
 ## Desired features
 

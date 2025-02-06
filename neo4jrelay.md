@@ -3,7 +3,15 @@ neo4jrelay: synchronization of neo4j relay with nostr
 strfry to neo4j ETL pipeline
 -----
 
-The goal of this project is to design and implement a set of open source tools which together comprise an ETL pipeline from a nostr relay to a neo4j database.
+[Nostr](https://nostr.com/) is an open source protocol for decentralized of social media endorsed by Jack Dorsey which boasts hundreds of independent apps and app developers and 20,000 average daily users. 
+
+Graph databases such as [neo4j](https://neo4j.com/) and the decentralized web of trust that many are tying to build with nostr are a match made in heaven. Regrettably, only a small handful of nostr developers are familiar with graph databases in general or neo4j in particular. The goal of this project is to make neo4j more accessible to a wide range of nostr developers by the creation of a nostr relay powered by neo4j.
+
+Specifically, the goal of this project is to design and implement a set of open source tools which together comprise an ETL pipeline from a nostr relay to a neo4j database. The relay of choice is [strfry](https://github.com/hoytech/strfry), although other relays could be considered.
+
+The initial application of these tools is a personal web of trust relay. Centrality algos such as personalized pageRank will be used to regulate which data is kept and which is discarded. Ideally, these tools will be ported over to [relay tools](https://github.com/relaytools), which is a fork of strfry.
+
+The secondary application is an enterprise nostr search engine, a google search for nostr, which will be an expansive cache of all nostr events. Like nostr.band but with neo4j. The volume of data will be large: currently half a billion events, with 1 million new events per day, according to [stats.nostr.band](https://stats.nostr.band).
 
 #### Step 1
 
@@ -23,17 +31,23 @@ Applications of this tool will fall on two ends of the spectrum depending on how
 - Global nostr cache: an enterprise that seeks to store every nostr event it comes across and make it searchable. Think: nostr.band augmented by neo4j for more complex and performant search queries
 - Personal Web of Trust relay: Think: relay.tools augmented by neo4j for calculation of web of trust scores
 
-## Background
+## choice of relay 
 
-[nostr](https://nostr.com/) is an open source protocol to build decentralized platforms. It currently boasts 20k daily active users, as reported by [nostr.band](https://stats.nostr.band)
-
-## relays 
+There are many relay implementations. 
 
 [strfry](https://github.com/hoytech/strfry). Many projects such as relay-tools are derived from strfry.
 
+[khatru](https://github.com/fiatjaf/khatru)
+
+[nostream](https://github.com/Cameri/nostream): typescript, postgresql.
+
 Many nostr relays use LMDB. One potential strategy would be to design this as an LMDB-to-neo4j ETL pipeline which could then be implemented using other relays including notedeck's nostrDb.
 
+For a comprehensive list see the relay section of [awesome nostr](https://github.com/aljazceru/awesome-nostr).
+
 ## data
+
+[nostr](https://nostr.com/) currently boasts 20k daily active users, as reported by [nostr.band](https://stats.nostr.band)
 
 #### resources with raw data
 

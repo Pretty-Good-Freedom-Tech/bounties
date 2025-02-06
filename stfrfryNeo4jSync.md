@@ -33,6 +33,14 @@ Strfry. Many projects such as relay-tools are derived from strfry.
 
 Many nostr relays use LMDB. One potential strategy would be to design this as an LMDB-to-neo4j ETL pipeline which could then be implemented using other relays including notedeck's nostrDb.
 
+## data
+
+#### resources with raw data
+
+Not including relays, large data repositories include nostr.band and primal.net.
+
+[nostrhole data](https://archive.v0l.io/); see [this post](https://njump.me/nevent1qqswv9q0766ymzttdf46fzpwdny0wy2rrgjyffz05zqdh3djz3rl8dgprpmhxue69uhhqunfd46hxtnwdaehgu339e3k7mf0qgsx8lnrrrw9skpulctgzruxm5y7rzlaw64tcf9qpqww9pt0xvzsfmgrqsqqqqqphnqgs8)
+
 ## neo4j node types
 
 - NostrUser

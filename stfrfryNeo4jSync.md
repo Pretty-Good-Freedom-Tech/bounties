@@ -78,4 +78,6 @@ Should strfry and neo4j be on the same server versus different servers?
 
 How to deal with replaceable versus irreplaceable events. Two different node types? delete events once replaced?
 
+## Related projects 
 
+[neostr](https://github.com/wisehodl/neostr)

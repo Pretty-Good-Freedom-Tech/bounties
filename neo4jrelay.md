@@ -13,7 +13,7 @@ The initial application of these tools is a personal web of trust relay. Central
 
 The secondary application is an enterprise nostr search engine, a google search for nostr, which will be an expansive cache of all nostr events. Like nostr.band but with neo4j. The volume of data will be large: currently half a billion events, with 1 million new events per day, according to [stats.nostr.band](https://stats.nostr.band).
 
-#### Step 1: initial exploration
+#### Step 1: planning
 
 Generation of a report with an outline of the overall strategy to achieve **core goals** as well as the a**dvanced goals** as described below
 - which import tools to use (data importer, cypher: load csv, APOC, neo4j-admin)
@@ -72,22 +72,26 @@ Not including relays, large data repositories include nostr.band and primal.net.
 
 ## neo4j node types
 
-- NostrUser, properties: pubkey
-- NostrEvent, properties: kind, created_at, replaceable
-- NostrRelay
+- NostrUser; properties: pubkey, personalizedPageRank
+- NostrEvent; properties: eventId, kind, created_at, author, replaceable (boolean)
+- NostrRelay; properties: url
 
 ## neo4j edge types
 
 NostrUser to NostrUser
-- follows (FOLLOW)
-- mutes (MUTE)
-- reports (REPORT) - should include report type
+- FOLLOW
+- MUTE
+- REPORT- should include report type
 
 NostrUser to NostrEvent
 - author (IS_THE_AUTHOR_OF)
 
 NostrUser to replaceable NostrEvent
 - author (IS_THE_AUTHOR_OF)
+
+NostrEvent to NostrEvent
+- REACTION; see [NIP-25](https://github.com/nostr-protocol/nips/blob/master/25.md)
+- REPLY; see [NIP-10](https://github.com/nostr-protocol/nips/blob/master/10.md)
 
 #### class threads
 

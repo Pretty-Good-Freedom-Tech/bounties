@@ -35,13 +35,22 @@ Applications of this tool will fall on two ends of the spectrum depending on how
 
 ## choice of relay 
 
-There are many relay implementations. 
+There are many relay implementations. Strfry is my top choice for several reasons. 
+- widely recognized as the fastest relay
+- LMDB
+- the basis of relay-tools
+
+Second choice might be nostrDB, which 
+
+#### options
 
 [strfry](https://github.com/hoytech/strfry). Many projects such as relay-tools are derived from strfry.
 
 [khatru](https://github.com/fiatjaf/khatru)
 
-[nostream](https://github.com/Cameri/nostream): typescript, postgresql.
+[nostream](https://github.com/Cameri/nostream): typescript, PostgreSQL.
+
+[nostrDB](https://github.com/damus-io/nostrdb) "an unfairly fast embedded nostr database backed by lmdb" - not a relay; "This entire design of nostrdb is copied almost entirely from strfry, the fastest nostr relay. The difference is that nostrdb is meant to be embeddable as a C library into any application with full nostr query support."
 
 Many nostr relays use LMDB. One potential strategy would be to design this as an LMDB-to-neo4j ETL pipeline which could then be implemented using other relays including notedeck's nostrDb.
 
@@ -57,9 +66,11 @@ Not including relays, large data repositories include nostr.band and primal.net.
 
 [nostrhole data](https://archive.v0l.io/); see [this post](https://njump.me/nevent1qqswv9q0766ymzttdf46fzpwdny0wy2rrgjyffz05zqdh3djz3rl8dgprpmhxue69uhhqunfd46hxtnwdaehgu339e3k7mf0qgsx8lnrrrw9skpulctgzruxm5y7rzlaw64tcf9qpqww9pt0xvzsfmgrqsqqqqqphnqgs8)
 
+[nostrDB testdata, profiles](http://git.jb55.com/nostrdb/file/testdata/profiles.json.html)
+
 ## neo4j node types
 
-- NostrUser
+- NostrUser, properties: pubkey
 - NostrEvent, properties: kind, created_at, replaceable
 - NostrRelay
 

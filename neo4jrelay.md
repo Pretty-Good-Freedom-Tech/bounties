@@ -1,9 +1,9 @@
-synchronization of neo4j relay with nostr
+neo4jrelay: synchronization of neo4j relay with nostr
 =====
 strfry to neo4j ETL pipeline
 -----
 
-The goal of this project is to design and implement a set of open source tools which together comprise an ETL pipeline from nostr to a neo4j database. Long term vsion would include applications (individual, community edition) as well as enterprise-level applications.
+The goal of this project is to design and implement a set of open source tools which together comprise an ETL pipeline from a nostr relay to a neo4j database.
 
 #### Step 1
 

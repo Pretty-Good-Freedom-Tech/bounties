@@ -1,4 +1,4 @@
-synchronization of neo4j with nostr
+synchronization of neo4j relay with nostr
 =====
 strfry to neo4j ETL pipeline
 -----

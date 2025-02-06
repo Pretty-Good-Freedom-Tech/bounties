@@ -29,7 +29,7 @@ Applications of this tool will fall on two ends of the spectrum depending on how
 
 ## relays 
 
-Strfry. Many projects such as relay-tools are derived from strfry.
+[strfry](https://github.com/hoytech/strfry). Many projects such as relay-tools are derived from strfry.
 
 Many nostr relays use LMDB. One potential strategy would be to design this as an LMDB-to-neo4j ETL pipeline which could then be implemented using other relays including notedeck's nostrDb.
 
@@ -80,4 +80,4 @@ How to deal with replaceable versus irreplaceable events. Two different node typ
 
 ## Related projects 
 
-[neostr](https://github.com/wisehodl/neostr)
+[neostr](https://github.com/wisehodl/neostr), a neo4j graph-native eventstore for nostr. Similar goals of the current project, except focus is more on calculation of WoT scores and less focus on the ETL pipeline itself. 

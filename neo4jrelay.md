@@ -13,9 +13,11 @@ The initial application of these tools is a personal web of trust relay. Central
 
 The secondary application is an enterprise nostr search engine, a google search for nostr, which will be an expansive cache of all nostr events. Like nostr.band but with neo4j. The volume of data will be large: currently half a billion events, with 1 million new events per day, according to [stats.nostr.band](https://stats.nostr.band).
 
-#### Step 1
+#### Step 1: initial exploration
 
-an outline of the overall strategy to achieve core goals, such as which import tools to use (data importer, cypher: load csv, APOC, neo4j-admin)
+Generation of a report with an outline of the overall strategy to achieve **core goals** as well as the a**dvanced goals** as described below
+- which import tools to use (data importer, cypher: load csv, APOC, neo4j-admin)
+- estimations of costs and length of time to complete goals
 
 #### core goals
 

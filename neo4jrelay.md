@@ -40,9 +40,11 @@ There are many relay implementations. Strfry is my top choice for several reason
 - LMDB
 - the basis of relay-tools
 
-Second choice might be nostrDB, which 
+Second choice might be nostrDB. However, it's in heavy development mode.
 
-#### options
+An attractive option would be to sync to LMDB in a way that is independent of strfry. This could be readily ported to any relay which uses or supports LMDB, which includes strfry, khatru, and nostrDB. Although of note, strfry actually uses a fork of LMDB.
+
+#### relay options
 
 [strfry](https://github.com/hoytech/strfry). Many projects such as relay-tools are derived from strfry.
 
@@ -50,7 +52,7 @@ Second choice might be nostrDB, which
 
 [nostream](https://github.com/Cameri/nostream): typescript, PostgreSQL.
 
-[nostrDB](https://github.com/damus-io/nostrdb) "an unfairly fast embedded nostr database backed by lmdb" - not a relay; "This entire design of nostrdb is copied almost entirely from strfry, the fastest nostr relay. The difference is that nostrdb is meant to be embeddable as a C library into any application with full nostr query support."
+[nostrDB](https://github.com/damus-io/nostrdb) - not a relay, but a database; "an unfairly fast embedded nostr database backed by lmdb." "This entire design of nostrdb is copied almost entirely from strfry, the fastest nostr relay. The difference is that nostrdb is meant to be embeddable as a C library into any application with full nostr query support."
 
 Many nostr relays use LMDB. One potential strategy would be to design this as an LMDB-to-neo4j ETL pipeline which could then be implemented using other relays including notedeck's nostrDb.
 

@@ -16,7 +16,10 @@ The secondary application is an enterprise nostr search engine, a google search 
 #### Step 1: planning
 
 Generation of a report with an outline of the overall strategy to achieve **core goals** as well as the a**dvanced goals** as described below
-- which import tools to use (data importer, cypher: load csv, APOC, neo4j-admin)
+- what is the best import strategy for initialization of a new db or import into the db of a very large data volume, e.g. nostrhole (see below)? Up to 1 billion events
+- what is the best import strategy for real-time import of data as new events are received by the relay? Assume data pipeline rates up to 10 million events per day but use different techniques for different rates. Personal WoT relays will have much lower rates: on the order of one per second 
+- what is the best method to load events that may have been missed? Optimal time interval to run such a script?
+- detailed strategy for each major import tool: data importer, cypher: load csv, APOC, neo4j-admin
 - estimations of costs and length of time to complete goals
 
 #### core goals
@@ -70,24 +73,24 @@ Not including relays, large data repositories include nostr.band and primal.net.
 
 [nostrDB testdata, profiles](http://git.jb55.com/nostrdb/file/testdata/profiles.json.html)
 
-## neo4j node types
+## data model 
+
+### neo4j node labels
 
 - NostrUser; properties: pubkey, personalizedPageRank
 - NostrEvent; properties: eventId, kind, created_at, author, replaceable (boolean)
 - NostrRelay; properties: url
 
-## neo4j edge types
+### neo4j edge types
 
 NostrUser to NostrUser
-- FOLLOW
-- MUTE
-- REPORT- should include report type
+- FOLLOW; see [NIP-02](https://github.com/nostr-protocol/nips/blob/master/02.md); properties: eventId, created_at, which are the event id and its timestamp of the kind 3 event which added this follow
+- MUTE; see kind 10000 events described in [NIP-51](https://github.com/nostr-protocol/nips/blob/master/51.md); properties: eventId, created_at, which are the event id and its timestamp of the kind 10000 event which added this follow
+- REPORT; see [NIP-56](https://github.com/nostr-protocol/nips/blob/master/56.md); properties: reportType (spam, nudity, etc); eventId
 
 NostrUser to NostrEvent
 - author (IS_THE_AUTHOR_OF)
-
-NostrUser to replaceable NostrEvent
-- author (IS_THE_AUTHOR_OF)
+- PROFILE
 
 NostrEvent to NostrEvent
 - REACTION; see [NIP-25](https://github.com/nostr-protocol/nips/blob/master/25.md)
@@ -96,6 +99,18 @@ NostrEvent to NostrEvent
 #### class threads
 
 Link to description of class threads.
+
+### Concept Graph Node Types:
+- Word;
+- Set; properties: 
+
+Initialize node:Set for each supported event kind: 
+
+### Concept Graph Edge Types:
+- threadInitiation 
+- threadProgagation SUBSET_OF
+- threadTermination SPECIFIC_INSTANCE_OF
+
 
 ## Progress
 
@@ -106,6 +121,8 @@ modification of the strfry export command to generate csv
 ## Open questions
 
 Should strfry and neo4j be on the same server versus different servers?
+
+rationale for messageBroker like RabbitMQ?
 
 #### replaceable versus irreplaceable events
 

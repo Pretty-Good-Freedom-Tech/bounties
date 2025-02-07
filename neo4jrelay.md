@@ -17,8 +17,7 @@ The secondary application is an enterprise nostr search engine, a google search 
 
 Generation of a report with an outline of the overall strategy to achieve **core goals** as well as the a**dvanced goals** as described below
 - Feasiblity of interface with LMDB versus strfry (e.g. use of ./strfry export command)
-- what is the best import strategy for real-time import of data as new events are received by the relay? 
-- what is the best method to load events that may have been missed? Optimal time interval to run such a script?
+- what is the best method to load events for each of the scenarios below? Optimal time interval to run such a script?
 - detailed strategy for each major import tool: data importer, cypher: load csv, APOC, neo4j-admin
 - estimations of costs and length of time to complete goals
 
@@ -34,6 +33,20 @@ Data importation scenarios:
 3. load events into neo4j in real time as they are received by paired relay. Assume data pipeline rates as low as 1 per second (or lower) or as high as 10 million events per day (or higher). May employ different techniques for different rates. Assuming that some events will be missed; see scenarios below.
 4. For missed events: synchronization of neo4j db with paired relay either over some specified time interval or covering all time
 5. sync of neo4j with external relay via websocket; could omit this scenario in favor of sync external relay with paired relay, then paired relay with neo4j
+
+Methods:
+- simple cypher command
+- [import csv](https://neo4j.com/docs/getting-started/data-import/csv-import/)
+  - [apoc.import.CSV](https://neo4j.com/docs/apoc/current/import/import-csv/)
+  - [load CSV cypher command](https://neo4j.com/docs/getting-started/data-import/csv-import/)
+- [apoc Load JSON procedures](https://neo4j.com/docs/apoc/current/import/load-json/)
+- [Neo4j-admin import](https://neo4j.com/docs/operations-manual/current/tools/neo4j-admin/neo4j-admin-import/)
+- [data importer](https://neo4j.com/docs/data-importer/current/)
+
+
+Proposed methods for each of the above scenarios:
+1. Data: [nostrhole](https://archive.v0l.io/); method: 
+2. 
 
 #### Advanced goals
 

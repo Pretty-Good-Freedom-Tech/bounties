@@ -16,6 +16,7 @@ The secondary application is an enterprise nostr search engine, a google search 
 #### Step 1: planning
 
 Generation of a report with an outline of the overall strategy to achieve **core goals** as well as the a**dvanced goals** as described below
+- Feasiblity of interface with LMDB versus strfry (e.g. use of ./strfry export command)
 - what is the best import strategy for initialization of a new db or import into the db of a very large data volume, e.g. nostrhole (see below)? Up to 1 billion events
 - what is the best import strategy for real-time import of data as new events are received by the relay? Assume data pipeline rates up to 10 million events per day but use different techniques for different rates. Personal WoT relays will have much lower rates: on the order of one per second 
 - what is the best method to load events that may have been missed? Optimal time interval to run such a script?
@@ -95,22 +96,6 @@ NostrUser to NostrEvent
 NostrEvent to NostrEvent
 - REACTION; see [NIP-25](https://github.com/nostr-protocol/nips/blob/master/25.md)
 - REPLY; see [NIP-10](https://github.com/nostr-protocol/nips/blob/master/10.md)
-
-#### class threads
-
-Link to description of class threads.
-
-### Concept Graph Node Types:
-- Word;
-- Set; properties: 
-
-Initialize node:Set for each supported event kind: 
-
-### Concept Graph Edge Types:
-- threadInitiation 
-- threadProgagation SUBSET_OF
-- threadTermination SPECIFIC_INSTANCE_OF
-
 
 ## Progress
 

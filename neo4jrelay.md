@@ -17,7 +17,6 @@ The secondary application is an enterprise nostr search engine, a google search 
 
 Generation of a report with an outline of the overall strategy to achieve **core goals** as well as the a**dvanced goals** as described below
 - Feasiblity of interface with LMDB versus strfry (e.g. use of ./strfry export command)
-- what is the best import strategy for initialization of a new db or import into the db of a very large data volume, e.g. nostrhole (see below)? Up to 1 billion events
 - what is the best import strategy for real-time import of data as new events are received by the relay? Assume data pipeline rates up to 10 million events per day but use different techniques for different rates. Personal WoT relays will have much lower rates: on the order of one per second 
 - what is the best method to load events that may have been missed? Optimal time interval to run such a script?
 - detailed strategy for each major import tool: data importer, cypher: load csv, APOC, neo4j-admin
@@ -25,7 +24,16 @@ Generation of a report with an outline of the overall strategy to achieve **core
 
 #### core goals
 
+The core goal is to sync neo4j with one or more **paired relays**, with a paired relay defined as one that is controlled by same entity as neo4j, whether the same server or an independent server. This is as opposed to an **external relay** which is a relay that can be connected by websocket. 
+
 Completion would include generation of code, open sourced under PGFT, and would include documentation for nostr developers and advanced users to set up their own neo4j server (AWS or other), and should include testing by perhaps a handful of nostr devs and users.
+
+Data importation scenarios:
+1. initialization of a new neo4j db or import into the db of a very large externally stored data volume, e.g. nostrhole (see below)? Up to 1 billion events
+2. initialization of a new neo4j db with a locally hosted strfry relay with lots of data, up to 1 - 10 billion events (nostr.band has half a billion events)
+3. load events into neo4j in real time as they are received by paired relay. Assuming that some events will be missed; see scenarios below.
+4. synchronization of neo4j db with paired relay either over some specified time interval all time, under the assumption there will be some events
+5. sync of neo4j with external relay via websocket; could omit this scenario in favor of sync external relay with paired relay, then paired relay with neo4j
 
 #### Advanced goals
 

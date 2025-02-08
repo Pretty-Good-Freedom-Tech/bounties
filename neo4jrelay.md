@@ -38,9 +38,9 @@ Methods:
 - simple cypher command
 - [import csv](https://neo4j.com/docs/getting-started/data-import/csv-import/)
   - [apoc.import.CSV](https://neo4j.com/docs/apoc/current/import/import-csv/)
-  - [load CSV cypher command](https://neo4j.com/docs/getting-started/data-import/csv-import/)
+  - [load CSV cypher command](https://neo4j.com/docs/getting-started/data-import/csv-import/) up to 10 million nodes and relationships
 - [apoc Load JSON procedures](https://neo4j.com/docs/apoc/current/import/load-json/)
-- [Neo4j-admin import](https://neo4j.com/docs/operations-manual/current/tools/neo4j-admin/neo4j-admin-import/)
+- [Neo4j-admin import](https://neo4j.com/docs/operations-manual/current/tools/neo4j-admin/neo4j-admin-import/) good for large amounts of data, but only do one time at setup
 - [data importer](https://neo4j.com/docs/data-importer/current/)
 
 

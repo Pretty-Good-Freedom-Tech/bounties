@@ -1,5 +1,6 @@
 Product name: Grapevine 
-===== (alt product name: Brainstorm)
+=====
+(alt product name: Brainstorm)
 -----
 
 # Product Overview

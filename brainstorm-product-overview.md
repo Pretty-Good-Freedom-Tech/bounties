@@ -11,7 +11,7 @@ Product name: Grapevine
 
 The Grapevine is a personalized nostr relay that uses your community -- what nostr users call your web of trust -- to identify who is the most trustworthy to curate content, facts, and information for you, in any given context. The Grapevine harnesses neo4j in two ways: first, to organize nostr notes into a knowledge graph; and second, to calculate importance scores using the kinds of algorithms that can only be done at scale using a graph database. 
 
-Nostr and neo4j are a match made in heaven. This is the missing ingredient for nostr to go mainstream. Millions of users, every one of whom will want their own Grapevine. Every development team is sleeping on this.
+Nostr and neo4j are a match made in heaven. This is the missing ingredient for nostr to go mainstream. Millions of users, every one of whom will want their own Grapevine. Every development team is sleeping on this. The time to strike is now.
 
 ## Target customers
 1. Personalized datastore for the average consumer. TAM: 8 billion.

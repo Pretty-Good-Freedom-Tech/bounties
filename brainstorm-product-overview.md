@@ -5,9 +5,9 @@ Product name: Grapevine
 
 # Product Overview
 
-## Description
-- a personalized nostr knowledge graph that you curate with the assistance of your community
+## Descriptions
 - a neo4j nostr relay
+- a personalized nostr knowledge graph that your community helps you to manage
 
 The Grapevine is a personalized nostr relay that uses your community -- what nostr users call your web of trust -- to identify who is the most trustworthy to curate content, facts, and information for you, in any given context. The Grapevine harnesses neo4j in two ways: first, to organize nostr notes into a knowledge graph; and second, to calculate importance scores using the kinds of algorithms that can only be done at scale using a graph database. 
 

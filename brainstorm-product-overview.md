@@ -50,14 +50,16 @@ average daily notes by kind
 
 ## Product rollout
 
-1. Brainstorm Relays
-- series of branded strfry relays
+1. PGFT Relays
+- series of branded strfry relays: __.brainstorm.ninja/relay, or __.pgf.tech/relay (or both?)
 - each dedicated to a different event kind(s): 0.brainstorm.ninja, 3.brainstorm.ninja, 10000.brainstorm.ninja, wot.brainstorm.ninja, wiki.brainstorm.ninja, reactions.brainstorm.ninja, 7.brainstorm.ninja, etc
-- spread brand name recognition
+- spread brand name recognition among builders
 - spam-free: only verified pubkeys can upload; will periodically 
 - anyone can download (for now; may add subscription later if traffic gets too big)
 - negentropy enabled; primarly long-term use will be to jump-start future Grapevine personalized relays; may restrict negentropy jump-start to Grapevine customers or verified
 - architect: me
+- should serve as long-term repository of all non-spammy events
+- alternative to other big relays: primal, nostr.band, damus, etc
 
 2. Centralized service that produces personalized PageRank scores and delivers by API on demand. Uses neo4j.
 - runs neo4j

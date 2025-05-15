@@ -48,8 +48,25 @@ average daily notes by kind
 
 ## Product rollout
 
-1. v0.1. Personalized Nostr WoT Relay
-Engage with major clients to interface with product to display personalized WoT scores
-Cost: $20/month; charges: $20/month
+1. Brainstorm Relays
+- series of branded strfry relays
+- each dedicated to a different event kind(s): 0.brainstorm.ninja, 3.brainstorm.ninja, 10000.brainstorm.ninja, wot.brainstorm.ninja, wiki.brainstorm.ninja, reactions.brainstorm.ninja, 7.brainstorm.ninja, etc
+- spread brand name recognition
+- spam-free: only verified pubkeys can upload; will periodically 
+- anyone can download (for now; may add subscription later if traffic gets too big)
+- negentropy enabled; primarly long-term use will be to jump-start future Grapevine personalized relays; may restrict negentropy jump-start to Grapevine customers or verified
+- architect: me
+
+2. Centralized service that produces personalized PageRank scores and delivers by API on demand. Uses neo4j.
+- runs neo4j
+- periodically syncs via negentropy with Brainstorm relays
+- calculates personalized pageRank on demand and offers scores by WoT DVM API
+- alternative to Vertex
+- main purpose: to establish relationship with main nostr clients: Primal, Amethyst, Coracle, Damus, Nostrudel, etc
+- architect: need neo4j expert for ETL pipeline
+
+3. v0.1. Personalized Nostr WoT Relay
+- Alternative to centralized service; produces additional scores including Mutuals, hops, verified followers
+- Further engage with major clients to interface with product to display personalized WoT scores
 
 

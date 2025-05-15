@@ -25,10 +25,13 @@ Product name: Grapevine
 
 Goal will be to validate the product and to answer the above tech stack questions, determine costs, flesh out a business plan.
 
-Engage neo4j experts to create neo4j nostr relay and answer the above questions.
-v0.1 kind 1. Follows. Calculates PageRank.
-v0.2. kinds 3, 1000. Follows, Mutes, Reports. Calculates GrapeRank.
-v0.3. content kinds, organized into a Knowledge Graph
+Engage neo4j experts to create neo4j nostr relay and answer the above questions for each of these versions:
+
+- v0.1 neo4j only. kind 1 only. node types: NostrUsers. Relationship type: FOLLOWS. relay connection will be by websocket. Calculates PageRank, dos, verified follows.
+- v0.2. kinds 3, 1000. Follows, Mutes, Reports. Calculates GrapeRank.
+- v1.0. all desired event kinds, organized into a mature Knowledge Graph
+
+Each version will be neo4j only and will connect to relay via websocket. Relay will be added to instance if/when necessary to achieve faster data synchronization.
 
 ## Data throughput
 

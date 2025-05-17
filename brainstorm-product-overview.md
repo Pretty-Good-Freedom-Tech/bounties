@@ -6,14 +6,17 @@ Product name: Grapevine
 # Product Overview
 
 ## One-line pitches:
-- to prospective neo4j engineers: a neo4j nostr relay
-- to the purple pilled: a personalized WoT nostr relay
-- to Randy: a personalized knowledge graph that your community helps you to manage
+- to neo4j engineers who may not be familiar with nostr:
+  - _a neo4j-based nostr relay_ 
+- to current nostr users who may not be familiar with neo4j:
+  - _a personalized web-of-trust nostr relay_
+- to prospective execs who are tech-savvy but may not be familiar with nostr or neo4j:
+  - _a personalized knowledge graph that your community helps you to manage_
 
 ## one-paragraph pitch:
-The Grapevine is a personalized nostr relay that uses your community -- what nostr users call your web of trust -- to identify who is the most trustworthy to curate content, facts, and information for you, in any given context. The Grapevine harnesses neo4j in two ways: first, to organize nostr notes into a knowledge graph; and second, to calculate importance scores using the kinds of algorithms that can only be done at scale using a graph database. 
+The Grapevine is a personalized nostr web-of-trust relay that relies upon your community to identify who is the most trustworthy to curate content, facts, and information for you, in any given context. Unlike existing nostr relays, the Grapevine organizes nostr events into a knowledge graph; and second, to calculate importance scores using the kinds of algorithms that can only be done at scale using a graph database. 
 
-Nostr and neo4j are a match made in heaven. This is the missing ingredient for nostr to go mainstream. Millions of users, every one of whom will want their own Grapevine. Every development team is sleeping on this. The time to strike is now.
+These two capabilities require a graph database for high performance. Nostr and neo4j are a match made in heaven. This is the missing ingredient for nostr to go mainstream. Millions of users, every one of whom will want their own Grapevine. Every development team is sleeping on this. The time to strike is now.
 
 ## Target customers
 1. Personalized datastore for the average consumer. TAM: 8 billion.
@@ -24,8 +27,8 @@ Nostr and neo4j are a match made in heaven. This is the missing ingredient for n
 2. Graph database
 
 ## Questions: tech stack
-1. Which nostr relay? strfry, khatru are leading options.
-2. Should the nostr relay and graph db be on the same instance?
+1. Which nostr relay? strfry, khatru are leading options. Also consider notedeck.
+2. Should the nostr relay and graph db be on the same instance? Or separate?
 3. Maximum possible throughput. 
 4. hardware requirements and costs per customer
 
